@@ -1,0 +1,19 @@
+{
+  "name": "valence-devtools",
+  "version": "0.1.0",
+  "description": "Signature tools for Valence projects",
+  "main": "cli.js",
+  "bin": {
+    "covalence": "./cli.js"
+  },
+  "repository": "https://github.com/soatok/valence-devtools",
+  "keywords": [],
+  "author": "Soatok Dreamseeker",
+  "license": "ISC",
+  "dependencies": {
+    "dhole-crypto": "^0.3.4",
+    "inquirer": "^6.5.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  }
+}
