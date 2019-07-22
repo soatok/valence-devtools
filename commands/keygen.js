@@ -22,7 +22,7 @@ module.exports = {
         }
 
         // Load the existing config
-        if (this.exists(homedir + "/.valence/keyring.json")) {
+        if (await util.exists(homedir + "/.valence/keyring.json")) {
             config = await util.readJson(homedir + "/.valence/keyring.json");
         }
         if (typeof(config['keys']) === 'undefined') {

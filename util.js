@@ -5,13 +5,14 @@ const inquirer = require('inquirer');
 module.exports = {
     exists: async function(target) {
         try {
-            return await fsp.access(
+            let access = await fsp.access(
                 target,
                 fs.constants.F_OK,
                 (err) => {
                     return !err
                 }
             );
+            return !access;
         } catch (e) {
             return false;
         }
