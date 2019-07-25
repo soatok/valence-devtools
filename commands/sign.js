@@ -1,11 +1,9 @@
 const {
     Asymmetric,
-    AsymmetricSecretKey,
-    AsymmetricPublicKey,
     Keyring
 } = require('dhole-crypto');
 const fs = require('fs');
-const fsp = require('fs').promises;
+const fsp = fs.promises;
 const homedir = require('os').homedir();
 const util = require('../util');
 

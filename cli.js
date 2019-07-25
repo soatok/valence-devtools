@@ -6,10 +6,16 @@ if (args.length < 1 || args.indexOf('--help') >= 0) {
      command = require('./commands/help');
 } else {
     switch (args[0]) {
+        case 'add':
+        case 'begin':
         case 'help':
         case 'keygen':
+        case 'package':
+        case 'ship':
         case 'sign':
+        case 'since':
         case 'token':
+        case 'upload':
             command = require('./commands/' + args[0]);
             break;
         default:
