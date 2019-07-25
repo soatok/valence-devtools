@@ -5,6 +5,7 @@ const {
 const fs = require('fs');
 const fsp = fs.promises;
 const homedir = require('os').homedir();
+const LibValenceUtility = require('libvalence').Utility;
 const util = require('../util');
 
 module.exports = {
@@ -80,12 +81,20 @@ module.exports = {
         }
 
         let sig = '';
+        let kr = new Keyring();
         for (let i = 0; i < args.length; i++) {
             sig = Asymmetric.sign(
                 await fsp.readFile(args[i]),
                 keypair['secret-key']
             );
-            await fsp.writeFile(args[i] + '.sig', sig);
+            await util.writeJson(args[i] + '.sig', {
+                'public-key': kr.save(keypair['public-key']),
+                'public-key-id': LibValenceUtility.getPublicKeyId(
+                    keypair['public-key']
+                ),
+                'signature': sig
+            });
+            // await fsp.writeFile(args[i] + '.sig', sig);
             console.log(`${args[i]} => ${args[i]}.sig\n`);
         }
     }
