@@ -15,6 +15,12 @@ module.exports = {
                         "Starts a clean slate for packaging a new release."
                     );
                     break;
+                case 'init':
+                    console.log(
+                        `Usage: ${process.argv[0]} init \n\n` +
+                        "Creates a basic valence.json file in the active project directory."
+                    );
+                    break;
                 case 'keygen':
                     console.log(
                         `Usage: ${process.argv[0]} keygen \n\n` +

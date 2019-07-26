@@ -9,6 +9,7 @@ if (args.length < 1 || args.indexOf('--help') >= 0) {
         case 'add':
         case 'begin':
         case 'help':
+        case 'init':
         case 'keygen':
         case 'package':
         case 'ship':
