@@ -1,5 +1,5 @@
 const {
-    Asymmetric,
+    AsymmetricFile,
     Keyring
 } = require('dhole-crypto');
 const fs = require('fs');
@@ -83,8 +83,8 @@ module.exports = {
         let sig = '';
         let kr = new Keyring();
         for (let i = 0; i < args.length; i++) {
-            sig = Asymmetric.sign(
-                await fsp.readFile(args[i]),
+            sig = AsymmetricFile.sign(
+                await fsp.open(args[i], 'r'),
                 keypair['secret-key']
             );
             await util.writeJson(args[i] + '.sig', {
