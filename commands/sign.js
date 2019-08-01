@@ -83,14 +83,14 @@ module.exports = {
         let sig = '';
         let kr = new Keyring();
         for (let i = 0; i < args.length; i++) {
-            sig = AsymmetricFile.sign(
+            sig = await AsymmetricFile.sign(
                 await fsp.open(args[i], 'r'),
                 keypair['secret-key']
             );
             await util.writeJson(args[i] + '.sig', {
-                'public-key': kr.save(keypair['public-key']),
+                'public-key': kr.save(keypair['secret-key'].getPublicKey()),
                 'public-key-id': LibValenceUtility.getPublicKeyId(
-                    keypair['public-key']
+                    keypair['secret-key'].getPublicKey()
                 ),
                 'signature': sig
             });
