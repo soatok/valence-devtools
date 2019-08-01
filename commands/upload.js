@@ -139,7 +139,6 @@ module.exports = {
             process.exit(1);
         } else if (typeof response.message !== 'undefined') {
             console.log(response.message);
-            process.exit(0);
         }
     }
 };

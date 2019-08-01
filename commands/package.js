@@ -10,6 +10,9 @@ module.exports = {
         let dirsHit = [];
         let dir;
         for (let i = 0; i < staging.files.length; i++) {
+            if (staging.files[i].length < 1) {
+                continue;
+            }
             // Add directory if it doesn't exist already in the archive.
             dir = this.getDirFromFilename(staging.files[i]);
             if (dir.length > 0) {

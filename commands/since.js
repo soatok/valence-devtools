@@ -38,6 +38,9 @@ module.exports = {
         let filesToAdd = await this.getFilesSince(tag);
 
         for (let i = 0; i < filesToAdd.length; i++) {
+            if (filesToAdd.length === 0) {
+                continue;
+            }
             if (staging.files.indexOf(filesToAdd[i]) < 0) {
                 staging.files.push(filesToAdd[i]);
             }
