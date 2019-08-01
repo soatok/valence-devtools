@@ -4,15 +4,34 @@ module.exports = {
             switch (args[0]) {
                 case 'add':
                     console.log(
-                        `Usage: ${process.argv[0]} add file[, file2, ...] \n\n` +
+                        `Usage: ${process.argv[0]} add file[, file2, ...]? \n\n` +
                         "Stages files for inclusion in the new release.\n" +
                         "Must be run after the begin command."
+                    );
+                    break;
+                case 'associate':
+                    console.log(
+                        `Usage: ${process.argv[0]} publish [public-key-file] \n\n` +
+                        "Upload a public key to the update server and associated it with " +
+                        "your publisher account."
+                    );
+                    break;
+                case 'backup':
+                    console.log(
+                        `Usage: ${process.argv[0]} backup [output-file]? \n\n` +
+                        "Export the secret key to STDOUT or an optional output file."
                     );
                     break;
                 case 'begin':
                     console.log(
                         `Usage: ${process.argv[0]} begin \n\n` +
                         "Starts a clean slate for packaging a new release."
+                    );
+                    break;
+                case 'export':
+                    console.log(
+                        `Usage: ${process.argv[0]} export [output-file]? \n\n` +
+                        "Export the public key to STDOUT or an optional output file."
                     );
                     break;
                 case 'init':
@@ -31,6 +50,18 @@ module.exports = {
                     console.log(
                         `Usage: ${process.argv[0]} package \n\n` +
                         "Zips up all the staged files for signing and releasing."
+                    );
+                    break;
+                case 'restore':
+                    console.log(
+                        `Usage: ${process.argv[0]} restore [keyfile]\n\n` +
+                        "Import an exported secret key into our keyring."
+                    );
+                    break;
+                case 'revoke':
+                    console.log(
+                        `Usage: ${process.argv[0]} revoke [id] \n\n` +
+                        "Revokes a public key, for use in the event of a system compromise."
                     );
                     break;
                 case 'ship':
@@ -57,7 +88,8 @@ module.exports = {
                 case 'token':
                     console.log(
                         `Usage: ${process.argv[0]} token [publisher-id] [token] \n\n` +
-                        "Saves an authentication token to publish new releases"
+                        "Saves an authentication token locally, to allow you to " +
+                        "publish new releases."
                     );
                     break;
                 case 'upload':

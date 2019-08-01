@@ -7,11 +7,13 @@ if (args.length < 1 || args.indexOf('--help') >= 0) {
 } else {
     switch (args[0]) {
         case 'add':
+        case 'backup':
         case 'begin':
         case 'help':
         case 'init':
         case 'keygen':
         case 'package':
+        case 'restore':
         case 'ship':
         case 'sign':
         case 'since':
