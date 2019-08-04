@@ -60,9 +60,7 @@ module.exports = {
         if (!await util.exists(activeDir + "/valence.json")) {
             throw new Error("Could not find a valid valence.json file.");
         }
-        let valenceData = await util.readJson(
-            util.exists(activeDir + "/valence.json")
-        );
+        let valenceData = await util.readJson(activeDir + "/valence.json");
         if (typeof valenceData.name === 'undefined') {
             throw new Error("There is no 'name' key in valence.json");
         }
@@ -98,14 +96,14 @@ module.exports = {
         // Upload it.
         return await http({
             'method': 'POST',
-            'file': {
-                value: fs.createReadStream(packageFile),
-                options: {
-                    filename: 'release-' + version + '-' + channel + '.zip',
-                    contentType: 'application/zip'
-                }
-            },
-            'form': {
+            'formData': {
+                'file': {
+                    value: fs.createReadStream(packageFile),
+                    options: {
+                        filename: 'release-' + version + '-' + channel + '.zip',
+                        contentType: 'application/zip'
+                    }
+                },
                 'channel': channel,
                 'project': valenceData.name,
                 'publickey': releaseInfo['public-key'],
