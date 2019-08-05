@@ -10,6 +10,7 @@ module.exports = {
             if (args.length < 2) {
                 return help.run(['ship']);
             }
+            await pkg.run();
             await sign.run([await pkg.run()]);
             await upload.run(args);
         } catch (e) {
