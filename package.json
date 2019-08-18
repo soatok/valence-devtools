@@ -12,9 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "del": "^5.0.0",
-    "dhole-crypto": "^0.5.1",
+    "dhole-crypto": "^0.5.2",
     "inquirer": "^6.5.0",
-    "libvalence": "^0.1.1",
+    "libvalence": "^0.3.1",
     "jszip": "^3.2.2",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
