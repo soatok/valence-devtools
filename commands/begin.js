@@ -1,7 +1,4 @@
 const del = require('del');
-const {
-    DholeUtil
-} = require('dhole-crypto');
 const fs = require('fs');
 const fsp = fs.promises;
 const homedir = require('os').homedir();

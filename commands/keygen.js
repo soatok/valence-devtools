@@ -30,12 +30,12 @@ module.exports = {
         }
 
         // Generate the new Ed25519 keypair
-        let key = AsymmetricSecretKey.generate();
-        let publicKey = kr.save(key.getPublicKey());
+        let key = await AsymmetricSecretKey.generate();
+        let publicKey = await kr.save(key.getPublicKey());
         config.keys.push({
             "directory": await fsp.realpath(process.cwd()),
             "public-key": publicKey,
-            "secret-key": kr.save(key)
+            "secret-key": await kr.save(key)
         });
 
         // Write the new config file

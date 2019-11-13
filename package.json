@@ -1,6 +1,6 @@
 {
   "name": "valence-devtools",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Signature tools for Valence projects",
   "main": "cli.js",
   "bin": {
@@ -12,12 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "del": "^5.0.0",
-    "dhole-crypto": "^0.5.2",
-    "inquirer": "^6.5.0",
-    "libvalence": "^0.3.1",
+    "dhole-crypto": "^0.7.0",
+    "inquirer": "^6.5.2",
+    "libvalence": "^0.4.0",
     "jszip": "^3.2.2",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
+    "request-promise-native": "^1.0.8",
     "run-sh": "^1.0.2"
   }
 }

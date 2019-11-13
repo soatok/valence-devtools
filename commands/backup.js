@@ -9,8 +9,8 @@ module.exports = {
         let kr = new Keyring();
         return {
             "directory": obj.directory,
-            "secret-key": kr.loadAsymmetricSecretKey(obj['secret-key']),
-            "public-key": kr.loadAsymmetricPublicKey(obj['public-key'])
+            "secret-key": await kr.loadAsymmetricSecretKey(obj['secret-key']),
+            "public-key": await kr.loadAsymmetricPublicKey(obj['public-key'])
         };
     },
 
@@ -77,8 +77,8 @@ module.exports = {
         }
         let kr = new Keyring();
         let exported = {
-            'secret-key': kr.save(keypair['secret-key']),
-            'public-key': kr.save(keypair['public-key'])
+            'secret-key': await kr.save(keypair['secret-key']),
+            'public-key': await kr.save(keypair['public-key'])
         };
 
 
